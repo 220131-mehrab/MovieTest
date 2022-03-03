@@ -3,6 +3,10 @@ package com.revature.movie;
 import org.apache.catalina.LifecycleException;
 import org.apache.catalina.startup.Tomcat;
 
+/**
+ *Created the server for the app.
+ */
+
 public class ServerMovie {
     public ServerMovie() {
         MovieFile MF = new MovieFile();

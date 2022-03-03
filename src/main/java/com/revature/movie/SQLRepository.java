@@ -3,8 +3,7 @@ package com.revature.movie;
 import java.sql.*;
 
 public class SQLRepository {
-//    String selectAll = "Select movie.rank, title, genre, actors from movies, types where movie.type=types.rank";
-//
+//   String selectAll = "Select movie.rank, title, genre, actors from movies, types where movie.type=types.rank";
 //    public Movie getMovie(String name){
 //        Movie result = null;
 //        try {

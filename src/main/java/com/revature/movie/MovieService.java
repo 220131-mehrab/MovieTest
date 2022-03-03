@@ -7,6 +7,10 @@ import jakarta.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.net.http.HttpRequest;
 
+/**
+ * Created html for the server. To display a search bar and a link.
+ */
+
 public class MovieService extends HttpServlet {
     public MovieService(){}
     @Override

@@ -1,5 +1,6 @@
 package com.revature.movie;
 
+import com.fasterxml.jackson.databind.ObjectMapper;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
@@ -14,6 +15,10 @@ import java.net.http.HttpClient;
 import java.net.http.HttpRequest;
 import java.net.http.HttpResponse;
 import java.util.Scanner;
+
+/**
+ * Created for csv file do seperate the different catergories into rows and columns.
+ */
 
 public class MovieFile extends HttpServlet {
     public MovieFile() {
@@ -87,23 +92,24 @@ public class MovieFile extends HttpServlet {
                 "                   </table>" +
                 "               </body></head></html>");
     }
-//    public Movie getMovie(String name){
-//        Movie result = null;
-//        HttpClient client = HttpClient.newHttpClient();
-//        HttpRequest request = HttpRequest.newBuilder()
-//                .uri(URI.create("https://foo.com/"))
-//                .build();
-//        try {
-//            HttpResponse<String> response = client.send(request, HttpResponse.BodyHandlers.ofString());
-//            String httpBody = response.body();
-//            Mapper mapper = new Mapper();
-//            mapper.readValue(httpBody, Movie.class);
-//        } catch (IOException e) {
-//            e.printStackTrace();
-//        } catch (InterruptedException e) {
-//            e.printStackTrace();
-//        }
-//        return result;
-//    }
+//    client server
+    public Movie getMovie(String name){
+        Movie result = null;
+        HttpClient client = HttpClient.newHttpClient();
+        HttpRequest request = HttpRequest.newBuilder()
+                .uri(URI.create("https://foo.com/"))
+                .build();
+        try {
+            HttpResponse<String> response = client.send(request, HttpResponse.BodyHandlers.ofString());
+            String httpBody = response.body();
+            ObjectMapper mapper = new ObjectMapper();
+            mapper.readValue(httpBody, Movie.class);
+        } catch (IOException e) {
+            e.printStackTrace();
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
+        return result;
+    }
 
 }
